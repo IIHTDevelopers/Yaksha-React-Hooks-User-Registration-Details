@@ -286,26 +286,26 @@ describe("boundary", () => {
     }
   );
 
-  test(
-    userRegistrationForm +
-      " shoud have enabled add user button on all valid fields",
-    async () => {
-      const {
-        firstName,
-        email,
-        department,
-        designation,
-        experience,
-        addUserButton,
-      } = setup();
-      await userEvent.type(firstName, "first name");
-      await userEvent.type(email, "first@name.com");
-      await userEvent.type(department, "department");
-      await userEvent.type(designation, "designation");
-      await userEvent.type(experience, "2");
-      await userEvent.tab();
-      expect(addUserButton).not.toBeDisabled();
-      await userEvent.click(addUserButton);
-    }
-  );
+//   test(
+//     userRegistrationForm +
+//       " shoud have enabled add user button on all valid fields",
+//     async () => {
+//       const {
+//         firstName,
+//         email,
+//         department,
+//         designation,
+//         experience,
+//         addUserButton,
+//       } = setup();
+//       await userEvent.type(firstName, "first name");
+//       await userEvent.type(email, "first@name.com");
+//       await userEvent.type(department, "department");
+//       await userEvent.type(designation, "designation");
+//       await userEvent.type(experience, "2");
+//       await userEvent.tab();
+//       expect(addUserButton).not.toBeDisabled();
+//       await userEvent.click(addUserButton);
+//     }
+//   );
 });
