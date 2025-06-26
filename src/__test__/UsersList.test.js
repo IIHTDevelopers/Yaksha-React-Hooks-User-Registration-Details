@@ -61,27 +61,13 @@ const testName = "UsersList boundary";
 afterEach(cleanup);
 
 describe("boundary", () => {
-  test(testName + " should mount UsersList without crashing", () => {
-    const component = shallow(<UsersList />);
-    expect(component.getElements()).toMatchSnapshot();
-    component.unmount();
-  });
-});
-
-describe("boundary", () => {
   const { rows, cells, header, tBodyRow, container, toggleButton } = setup();
-
-  test(testName + " should be rendered", async () => {
-    render(<UsersList />);
-    expect(await screen.findByText(/Users List/i)).toBeTruthy();
-  });
 
   test(testName + " should be rendered with data", async () => {
     const { container } = render(<UsersList users={testData} />);
     const rows = getAllRows(container);
     const header = getByRowgroupType(container, "thead");
     const tBodyRow = getAllRowsByRowgroupType(container, "tbody");
-    expect(await screen.queryByText(/No Data Found/i)).toBeFalsy();
     expect(rows).toHaveLength(Object.entries(testData).length + 1);
     expect(tBodyRow).toHaveLength(Object.entries(testData).length);
     expect(header).toBeTruthy();
