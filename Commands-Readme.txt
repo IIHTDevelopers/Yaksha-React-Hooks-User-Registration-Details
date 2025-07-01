@@ -4,4 +4,4 @@
 
 	npm run test -> to run all test cases. It is mandatory to run this command before submission of workspace -> takes 5 to 6 min  
 
-* You may also run “npm run test” while developing the solution to re-factor the code to pass the test-cases.
+* You may also run “npm run jest” while developing the solution to re-factor the code to pass the test-cases.
